@@ -1,0 +1,14 @@
+extends layouts/main.pug
+
+block content
+    form.col-md-4(action='/productos' method='post')
+        .form-outline.mb-4
+            label.form-label(for='title') Title:
+            input#title.form-control(type='text' name='title')
+        .form-outline.mb-4
+            label.form-label(for='price') Price:
+            input#price.form-control(type='text' name='price')
+        .form-outline.mb-4
+            label.form-label(for='thumbnail') Thumbnail URL:
+            input#thumbnail.form-control(type='text' name='thumbnail')
+        button.btn.btn-primary.btn-block.mb-4(type='submit') Add

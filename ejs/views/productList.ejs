@@ -1,0 +1,32 @@
+<%- include('./partials/header') %>
+<div class="w-100 text-center">
+    <h1>Product List</h1>
+</div>
+<% if (empty) { %>
+    <div>
+        <h3>There are not products, you can add some products
+            <a href="/">here</a></h3>
+    </div>
+<% } else { %>
+    <table class="table table-striped col-md-6 text-center">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(function(product){ %>
+                <tr>
+                    <td><%= product.id %></td>
+                    <td><%= product.title %></td>
+                    <td><%= product.price %></td>
+                    <td><img src=<%= product.thumbnail %> width="200" /></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+<% } %>
+<%- include('./partials/footer') %>

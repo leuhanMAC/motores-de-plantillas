@@ -1,0 +1,27 @@
+extends layouts/main.pug
+
+block content
+    .w-100.text-center
+        h1 Product List
+    #empty
+    if empty
+        div
+            h3
+                | There are not products, you can add some products 
+                a(href='/') here
+    else
+        table.table.table-striped.col-md-6.text-center
+            thead
+                tr
+                    th(scope='col') ID
+                    th(scope='col') Title
+                    th(scope='col') Price
+                    th(scope='col') Image
+            tbody
+                each product in products
+                    tr
+                        td=product.id
+                        td=product.title
+                        td=product.price
+                        td
+                            img(src=product.thumbnail, width='200')
